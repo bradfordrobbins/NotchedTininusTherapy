@@ -35,12 +35,14 @@
 		8C21CF401CEC2D2E0A5B2836 /* ListeningLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160993BE001BA59350F0852 /* ListeningLog.swift */; };
 		8D79D56684D9CA9130828DF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428E5C9DE013751B81CDBA3 /* ContentView.swift */; };
 		8F7996C70CEFF8A5C6E72FEB /* FindFrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */; };
+		9E6AA574F3C80F604723150E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 216B46F695324EBDF0859B53 /* PrivacyInfo.xcprivacy */; };
 		9EDECE9C243C8A10CB1CA06F /* NotchWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE04982E254AA7A802AEC9E /* NotchWidth.swift */; };
 		A429553B47747A1F2435AC48 /* ListeningLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160993BE001BA59350F0852 /* ListeningLog.swift */; };
 		A719B5130FF8FA00CF6E0E3C /* SineToneEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BFBC7F16D4CB79D810FF57 /* SineToneEngine.swift */; };
 		A96E7545398A6A95783D2576 /* FindFrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */; };
 		AA01C59C378045D93C09A56D /* TherapyAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */; };
 		AB37FE7F3754BF2EF370DC5F /* SpectrumAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D42580608A4E5A76523147 /* SpectrumAnalyzer.swift */; };
+		B1FC5AD8D8EC3A4681BF2260 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 216B46F695324EBDF0859B53 /* PrivacyInfo.xcprivacy */; };
 		B22BBDC68D6F2E6B4A0796B5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1611E350FB7B1A584FAFBCB /* Track.swift */; };
 		B8C07CCF38B8C900C07816D0 /* TherapyPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */; };
 		CC09958E2D3F4FBBF364ACE0 /* TininusNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */; };
@@ -63,6 +65,7 @@
 /* Begin PBXFileReference section */
 		04C4C1060E3E938B971284F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFrequencyView.swift; sourceTree = "<group>"; };
+		216B46F695324EBDF0859B53 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		368E67875B543BFCF42E3015 /* TherapySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapySource.swift; sourceTree = "<group>"; };
 		3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyAudioEngine.swift; sourceTree = "<group>"; };
 		3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyPlayerView.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 			children = (
 				04C4C1060E3E938B971284F7 /* Assets.xcassets */,
 				4428E5C9DE013751B81CDBA3 /* ContentView.swift */,
+				216B46F695324EBDF0859B53 /* PrivacyInfo.xcprivacy */,
 				F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */,
 				A8CFF4D9DE0C03965EFFAECC /* Audio */,
 				BF51FD9D4CB972F7A656A847 /* Models */,
@@ -232,6 +236,18 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					3CD3B3FB8D6AEA2F124F7CB4 = {
+						DevelopmentTeam = FTS8QD7ABM;
+						ProvisioningStyle = Automatic;
+					};
+					5D6244B9E7A43E8EA9FE6BC6 = {
+						DevelopmentTeam = FTS8QD7ABM;
+						ProvisioningStyle = Automatic;
+					};
+					CEC5B5C341CE8C1455D45524 = {
+						DevelopmentTeam = FTS8QD7ABM;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 6F4A65BFCCD829405FBD4666 /* Build configuration list for PBXProject "TininusNotch" */;
@@ -261,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16D0734CE922EDF02807CDC9 /* Assets.xcassets in Resources */,
+				B1FC5AD8D8EC3A4681BF2260 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DAE6A4F06EDA58EC1CDB4EF /* Assets.xcassets in Resources */,
+				9E6AA574F3C80F604723150E /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +370,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TininusNotch/TininusNotch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FTS8QD7ABM;
 				INFOPLIST_FILE = "TininusNotch/Info-macOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
@@ -372,7 +392,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TininusNotch/TininusNotch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FTS8QD7ABM;
 				INFOPLIST_FILE = "TininusNotch/Info-macOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
@@ -419,9 +441,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FTS8QD7ABM;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -468,7 +492,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FTS8QD7ABM;
 				INFOPLIST_FILE = "TininusNotch/Info-iOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
@@ -489,7 +515,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FTS8QD7ABM;
 				INFOPLIST_FILE = "TininusNotch/Info-iOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
@@ -555,9 +583,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FTS8QD7ABM;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

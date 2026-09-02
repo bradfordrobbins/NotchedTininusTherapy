@@ -11,9 +11,11 @@ settings:
   base:
     SWIFT_VERSION: "6.0"
     GENERATE_INFOPLIST_FILE: YES
-    CURRENT_PROJECT_VERSION: 1
+    CURRENT_PROJECT_VERSION: 2
     MARKETING_VERSION: 1.0.0
     SWIFT_STRICT_CONCURRENCY: complete
+    DEVELOPMENT_TEAM: FTS8QD7ABM
+    CODE_SIGN_STYLE: Automatic
 
 targetTemplates:
   App:
@@ -52,11 +54,15 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
+        ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         TARGETED_DEVICE_FAMILY: "1,2"
         SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: YES
         INFOPLIST_FILE: TininusNotch/Info-iOS.plist
+        CODE_SIGN_IDENTITY: Apple Development
+        DEVELOPMENT_TEAM: FTS8QD7ABM
+        CODE_SIGN_STYLE: Automatic
 
   TininusNotch-macOS:
     templates:
@@ -75,11 +81,14 @@ targets:
         LSMinimumSystemVersion: "26.0"
         NSHumanReadableCopyright: Copyright © 2026
         NSMicrophoneUsageDescription: Tininus Notch uses the system audio engine for playback. It does not record from the microphone.
+        ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         INFOPLIST_FILE: TininusNotch/Info-macOS.plist
         CODE_SIGN_ENTITLEMENTS: TininusNotch/TininusNotch.entitlements
         COMBINE_HIDPI_IMAGES: YES
+        DEVELOPMENT_TEAM: FTS8QD7ABM
+        CODE_SIGN_STYLE: Automatic
 
   TininusNotchTests:
     type: bundle.unit-test
@@ -102,6 +111,8 @@ schemes:
         TininusNotch-iOS: all
     run:
       config: Debug
+    archive:
+      config: Release
   TininusNotch-macOS:
     build:
       targets:

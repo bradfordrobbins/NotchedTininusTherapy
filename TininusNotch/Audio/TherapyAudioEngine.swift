@@ -16,6 +16,7 @@ final class TherapyAudioEngine {
     private var playID = UUID()
     private var outstandingBuffers = 0
     private var reachedEOF = false
+    private var didNotifyTrackEnd = false
     private var isStopped = true
     private var isPlaying = false
     private var isGeneratingNoise = false
@@ -75,18 +76,16 @@ final class TherapyAudioEngine {
             engine.attach(player)
             didAttachPlayer = true
         }
-        engine.disconnectNodeOutput(player)
-        engine.connect(player, to: engine.mainMixerNode, format: dspFormat)
-
-        if !engine.isRunning {
-            engine.prepare()
-            try engine.start()
-        }
+        try connectPlayer(to: engine, format: dspFormat)
 
         isStopped = false
         isPlaying = true
         fillSchedule()
-        player.play()
+        if outstandingBuffers == 0 {
+            markEndOfFile()
+        } else {
+            player.play()
+        }
     }
 
     func playWhiteNoise(frequency: Double, width: NotchWidth) throws {
@@ -113,13 +112,7 @@ final class TherapyAudioEngine {
             engine.attach(player)
             didAttachPlayer = true
         }
-        engine.disconnectNodeOutput(player)
-        engine.connect(player, to: engine.mainMixerNode, format: dspFormat)
-
-        if !engine.isRunning {
-            engine.prepare()
-            try engine.start()
-        }
+        try connectPlayer(to: engine, format: dspFormat)
 
         isStopped = false
         isPlaying = true
@@ -180,8 +173,10 @@ final class TherapyAudioEngine {
         isStopped = true
         isPlaying = false
         reachedEOF = false
+        didNotifyTrackEnd = false
         outstandingBuffers = 0
         player.stop()
+        player.reset()
         file = nil
         converter = nil
         dspFormat = nil
@@ -206,7 +201,7 @@ final class TherapyAudioEngine {
 
         let remaining = file.length - file.framePosition
         if remaining <= 0 {
-            reachedEOF = true
+            markEndOfFile()
             return false
         }
 
@@ -221,11 +216,11 @@ final class TherapyAudioEngine {
         do {
             try file.read(into: sourceBuffer, frameCount: framesToRead)
         } catch {
-            reachedEOF = true
+            markEndOfFile()
             return false
         }
         guard sourceBuffer.frameLength > 0 else {
-            reachedEOF = true
+            markEndOfFile()
             return false
         }
 
@@ -241,7 +236,7 @@ final class TherapyAudioEngine {
             input.next(outStatus)
         }
         if status == .error || playBuffer.frameLength == 0 {
-            reachedEOF = true
+            markEndOfFile()
             return false
         }
 
@@ -256,15 +251,14 @@ final class TherapyAudioEngine {
         onSpectrum?(spectrum)
 
         let currentPlayID = playID
-        let isLast = file.framePosition >= file.length
-        if isLast {
+        if file.framePosition >= file.length {
             reachedEOF = true
         }
 
         outstandingBuffers += 1
         player.scheduleBuffer(playBuffer) { [weak self] in
             Task { @MainActor in
-                self?.bufferFinished(playID: currentPlayID, wasLast: isLast)
+                self?.bufferFinished(playID: currentPlayID)
             }
         }
         return true
@@ -292,7 +286,7 @@ final class TherapyAudioEngine {
         outstandingBuffers += 1
         player.scheduleBuffer(playBuffer) { [weak self] in
             Task { @MainActor in
-                self?.bufferFinished(playID: currentPlayID, wasLast: false)
+                self?.bufferFinished(playID: currentPlayID)
             }
         }
         return true
@@ -309,17 +303,40 @@ final class TherapyAudioEngine {
         }
     }
 
-    private func bufferFinished(playID: UUID, wasLast: Bool) {
+    private func connectPlayer(to engine: AVAudioEngine, format: AVAudioFormat) throws {
+        engine.disconnectNodeOutput(player)
+        engine.connect(player, to: engine.mainMixerNode, format: format)
+        // macOS often invalidates the graph when the file sample rate changes.
+        // Restarting each track avoids a silent player that still looks "playing".
+        if engine.isRunning {
+            engine.stop()
+        }
+        engine.prepare()
+        try engine.start()
+    }
+
+    private func markEndOfFile() {
+        reachedEOF = true
+        notifyTrackEndedIfNeeded()
+    }
+
+    private func notifyTrackEndedIfNeeded() {
+        guard !didNotifyTrackEnd, reachedEOF, outstandingBuffers == 0, !isStopped else { return }
+        didNotifyTrackEnd = true
+        isPlaying = false
+        let callback = onTrackEnded
+        Task { @MainActor in
+            callback?()
+        }
+    }
+
+    private func bufferFinished(playID: UUID) {
         guard playID == self.playID else { return }
         outstandingBuffers = max(0, outstandingBuffers - 1)
-        if wasLast, outstandingBuffers == 0 {
-            isPlaying = false
-            onTrackEnded?()
-            return
-        }
-        if isPlaying, !isStopped {
+        if isPlaying, !isStopped, !reachedEOF {
             fillSchedule()
         }
+        notifyTrackEndedIfNeeded()
     }
 
     private func observeConfigurationChanges(on engine: AVAudioEngine) {

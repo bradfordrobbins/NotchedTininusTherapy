@@ -100,6 +100,14 @@ struct HelpView: View {
                 Text("Stein et al., 2016. Clinical trial on tonal tinnitus with tailor-made notched music training. BMC Neurology.")
                     .multilineTextAlignment(.leading)
             }
+            Link(destination: Self.huangPaper) {
+                Text("Huang et al., 2022. Notched sound alleviates tinnitus by reorganization emotional center. Frontiers in Human Neuroscience.")
+                    .multilineTextAlignment(.leading)
+            }
+            Link(destination: Self.jiangReview) {
+                Text("Jiang et al., 2025. The efficacy of notched music therapy vs conventional music therapy for chronic subjective tinnitus patients: a systematic review and meta-analysis. European Archives of Oto-Rhino-Laryngology.")
+                    .multilineTextAlignment(.leading)
+            }
         }
     }
 
@@ -122,10 +130,12 @@ struct HelpView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(title)
                 .font(.title3.weight(.semibold))
-            content()
-                .font(.body)
-                .foregroundStyle(.primary)
-                .fixedSize(horizontal: false, vertical: true)
+            VStack(alignment: .leading, spacing: 10) {
+                content()
+            }
+            .font(.body)
+            .foregroundStyle(.primary)
+            .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
@@ -151,6 +161,8 @@ struct HelpView: View {
 
     private static let pnasPaper = URL(string: "https://doi.org/10.1073/pnas.0911268107")!
     private static let clinicalTrial = URL(string: "https://doi.org/10.1186/s12883-016-0558-7")!
+    private static let huangPaper = URL(string: "https://doi.org/10.3389/fnhum.2021.762492")!
+    private static let jiangReview = URL(string: "https://doi.org/10.1007/s00405-025-09260-9")!
 }
 
 struct HelpSheetModifier: ViewModifier {
