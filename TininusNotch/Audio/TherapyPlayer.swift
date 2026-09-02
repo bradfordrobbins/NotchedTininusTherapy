@@ -33,13 +33,19 @@ final class TherapyPlayer {
         }
     }
 
+    private var isWhiteNoiseSession = false
+
+    var isNoiseMode: Bool {
+        settings.therapySource == .whiteNoise
+    }
+
     var nowPlaying: Track? {
-        guard let currentIndex, tracks.indices.contains(currentIndex) else { return nil }
+        guard !isNoiseMode, let currentIndex, tracks.indices.contains(currentIndex) else { return nil }
         return tracks[currentIndex]
     }
 
     var duration: TimeInterval {
-        nowPlaying?.duration ?? 0
+        isNoiseMode ? 0 : (nowPlaying?.duration ?? 0)
     }
 
     func restoreFolderIfNeeded() async {
@@ -92,6 +98,7 @@ final class TherapyPlayer {
                 width: settings.notchWidth
             )
             engine.setVolume(settings.musicVolume)
+            isWhiteNoiseSession = false
             currentIndex = index
             isPlaying = true
             currentTime = 0
@@ -104,13 +111,52 @@ final class TherapyPlayer {
         }
     }
 
+    func playWhiteNoise() {
+        do {
+            try engine.playWhiteNoise(
+                frequency: settings.tinnitusFrequency,
+                width: settings.notchWidth
+            )
+            engine.setVolume(settings.musicVolume)
+            isWhiteNoiseSession = true
+            isPlaying = true
+            currentTime = 0
+            lastListenTick = .now
+            errorMessage = nil
+            startProgressUpdates()
+        } catch {
+            errorMessage = "Could not start white noise."
+            isPlaying = false
+            isWhiteNoiseSession = false
+        }
+    }
+
     func togglePlayPause() {
         if isPlaying {
             pause()
+        } else if isNoiseMode {
+            if isWhiteNoiseSession {
+                resume()
+            } else {
+                playWhiteNoise()
+            }
         } else if currentIndex != nil {
             resume()
         } else if !tracks.isEmpty {
             play(at: 0)
+        }
+    }
+
+    func applyTherapySource() {
+        let wasPlaying = isPlaying
+        let resumeIndex = currentIndex
+        stop()
+        if isNoiseMode {
+            if wasPlaying {
+                playWhiteNoise()
+            }
+        } else if wasPlaying, let index = resumeIndex ?? (tracks.isEmpty ? nil : 0) {
+            play(at: index)
         }
     }
 
@@ -157,6 +203,7 @@ final class TherapyPlayer {
         progressTask = nil
         engine.stop()
         isPlaying = false
+        isWhiteNoiseSession = false
         currentTime = 0
         listeningLog.flush()
     }
@@ -182,6 +229,7 @@ final class TherapyPlayer {
     }
 
     private func advanceAfterTrackEnd() {
+        guard !isNoiseMode else { return }
         isPlaying = false
         next()
     }

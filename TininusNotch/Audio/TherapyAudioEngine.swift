@@ -31,7 +31,6 @@ final class TherapyAudioEngine {
     private let spectrumAnalyzer = SpectrumAnalyzer()
 
     var isRunning: Bool { engine?.isRunning ?? false }
-    var hasActiveSession: Bool { !isStopped }
 
     func prepare() throws {
         try OutputAudioSession.activate()

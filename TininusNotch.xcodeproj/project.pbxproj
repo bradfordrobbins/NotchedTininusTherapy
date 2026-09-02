@@ -22,8 +22,10 @@
 		42EC7469F77D200DF3F2ED36 /* FolderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7335FCF886CB11F7F17894 /* FolderLibrary.swift */; };
 		4DAE6A4F06EDA58EC1CDB4EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C4C1060E3E938B971284F7 /* Assets.xcassets */; };
 		5C404ACA68414D13606EB6F4 /* OutputAudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF04C1C6217409B4AE81D7E /* OutputAudioSession.swift */; };
+		626C0CCA7CEBB3F8CC6CCCEA /* TherapySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E67875B543BFCF42E3015 /* TherapySource.swift */; };
 		6D5323EFA2B081963E335F34 /* NotchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E85AEEA6E567FCB011DCC8 /* NotchFilterTests.swift */; };
 		6FFFFAA6AC9CF9DD87F0D677 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD15305826B562C20AB629C /* SpectrumView.swift */; };
+		735477D753CDEF1805051829 /* TherapySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E67875B543BFCF42E3015 /* TherapySource.swift */; };
 		735FECB294F483C85B9139D6 /* ListeningUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C360A0278866AE273E7AD5 /* ListeningUsageView.swift */; };
 		75332C167F9048B39507EAA1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */; };
 		779C19DB4B3327836AEA9C60 /* TininusNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */; };
@@ -59,11 +61,12 @@
 /* Begin PBXFileReference section */
 		04C4C1060E3E938B971284F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFrequencyView.swift; sourceTree = "<group>"; };
+		368E67875B543BFCF42E3015 /* TherapySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapySource.swift; sourceTree = "<group>"; };
 		3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyAudioEngine.swift; sourceTree = "<group>"; };
 		3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyPlayerView.swift; sourceTree = "<group>"; };
 		4160993BE001BA59350F0852 /* ListeningLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningLog.swift; sourceTree = "<group>"; };
 		4428E5C9DE013751B81CDBA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		46E8D7721CD7D52FCCD47AFF /* TininusNotch-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TininusNotch-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E8D7721CD7D52FCCD47AFF /* TininusNotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TininusNotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BFBC7F16D4CB79D810FF57 /* SineToneEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineToneEngine.swift; sourceTree = "<group>"; };
 		5DB0C396EEA78F45AF429DA3 /* TherapyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyPlayer.swift; sourceTree = "<group>"; };
 		5FD15305826B562C20AB629C /* SpectrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
@@ -78,7 +81,7 @@
 		C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		E1611E350FB7B1A584FAFBCB /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TininusNotchApp.swift; sourceTree = "<group>"; };
-		F4AAF48BCBF908225E054F1D /* TininusNotch-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "TininusNotch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4AAF48BCBF908225E054F1D /* TininusNotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TininusNotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -115,6 +118,7 @@
 				C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */,
 				4160993BE001BA59350F0852 /* ListeningLog.swift */,
 				6FE04982E254AA7A802AEC9E /* NotchWidth.swift */,
+				368E67875B543BFCF42E3015 /* TherapySource.swift */,
 				E1611E350FB7B1A584FAFBCB /* Track.swift */,
 			);
 			path = Models;
@@ -140,8 +144,8 @@
 		E6EE3B5777FE90F17C8AFB7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4AAF48BCBF908225E054F1D /* TininusNotch-iOS.app */,
-				46E8D7721CD7D52FCCD47AFF /* TininusNotch-macOS.app */,
+				F4AAF48BCBF908225E054F1D /* TininusNotch.app */,
+				46E8D7721CD7D52FCCD47AFF /* TininusNotch.app */,
 				6748569BF03DFC5F571CDD22 /* TininusNotchTests.xctest */,
 			);
 			name = Products;
@@ -176,7 +180,7 @@
 			packageProductDependencies = (
 			);
 			productName = "TininusNotch-macOS";
-			productReference = 46E8D7721CD7D52FCCD47AFF /* TininusNotch-macOS.app */;
+			productReference = 46E8D7721CD7D52FCCD47AFF /* TininusNotch.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5D6244B9E7A43E8EA9FE6BC6 /* TininusNotchTests */ = {
@@ -212,7 +216,7 @@
 			packageProductDependencies = (
 			);
 			productName = "TininusNotch-iOS";
-			productReference = F4AAF48BCBF908225E054F1D /* TininusNotch-iOS.app */;
+			productReference = F4AAF48BCBF908225E054F1D /* TininusNotch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -222,9 +226,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
+				LastUpgradeCheck = 2650;
 			};
 			buildConfigurationList = 6F4A65BFCCD829405FBD4666 /* Build configuration list for PBXProject "TininusNotch" */;
 			developmentRegion = en;
@@ -286,6 +288,7 @@
 				AA01C59C378045D93C09A56D /* TherapyAudioEngine.swift in Sources */,
 				EDF751EB61A0A5058AB5ACD9 /* TherapyPlayer.swift in Sources */,
 				F2ED4D7A57B1455E1E76D592 /* TherapyPlayerView.swift in Sources */,
+				735477D753CDEF1805051829 /* TherapySource.swift in Sources */,
 				779C19DB4B3327836AEA9C60 /* TininusNotchApp.swift in Sources */,
 				B22BBDC68D6F2E6B4A0796B5 /* Track.swift in Sources */,
 			);
@@ -310,6 +313,7 @@
 				2692A40CAED1F5F24D33AE53 /* TherapyAudioEngine.swift in Sources */,
 				2F29061F554A731B8903DB46 /* TherapyPlayer.swift in Sources */,
 				B8C07CCF38B8C900C07816D0 /* TherapyPlayerView.swift in Sources */,
+				626C0CCA7CEBB3F8CC6CCCEA /* TherapySource.swift in Sources */,
 				CC09958E2D3F4FBBF364ACE0 /* TininusNotchApp.swift in Sources */,
 				F296792A914C4793C571F3A1 /* Track.swift in Sources */,
 			);
@@ -341,6 +345,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TininusNotch/TininusNotch.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = "TininusNotch/Info-macOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
@@ -361,6 +366,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TininusNotch/TininusNotch.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = "TininusNotch/Info-macOS.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
@@ -409,9 +415,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -427,6 +435,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -439,6 +448,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -498,6 +508,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,9 +556,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -570,6 +583,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;

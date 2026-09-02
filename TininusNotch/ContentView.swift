@@ -24,7 +24,7 @@ struct ContentView: View {
                 }
             }
             .tabItem {
-                Label("Therapy Music", systemImage: "music.note.list")
+                Label("Therapy", systemImage: "waveform")
             }
             .tag(AppTab.therapy)
 

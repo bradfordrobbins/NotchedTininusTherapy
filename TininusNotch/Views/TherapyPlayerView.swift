@@ -10,7 +10,10 @@ struct TherapyPlayerView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
-                    folderSection
+                    sourceSection
+                    if !player.isNoiseMode {
+                        folderSection
+                    }
                     nowPlayingCard
                     transport
                     filterSection
@@ -20,16 +23,20 @@ struct TherapyPlayerView: View {
                         width: settings.notchWidth
                     )
                     volumeSection
-                    playlist
+                    if !player.isNoiseMode {
+                        playlist
+                    }
                     disclaimer
                 }
                 .padding(24)
             }
-            .navigationTitle("Therapy Music")
+            .navigationTitle("Therapy")
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Choose Folder") {
-                        isImporting = true
+                if !player.isNoiseMode {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Choose Folder") {
+                            isImporting = true
+                        }
                     }
                 }
             }
@@ -52,24 +59,27 @@ struct TherapyPlayerView: View {
             .onChange(of: settings.musicVolume) { _, _ in
                 player.applyVolume()
             }
-            .onDisappear {
-                player.pause()
+            .onChange(of: settings.therapySource) { _, _ in
+                player.applyTherapySource()
             }
         }
     }
 
-    private var folderSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            if let folderName = player.folderName {
-                Label(folderName, systemImage: "folder.fill")
-                    .font(.headline)
-            } else {
-                Text("Choose a folder of your own music files. DRM-protected tracks are skipped; everything else is notch-filtered in real time.")
+    private var sourceSection: some View {
+        @Bindable var settings = settings
+        return VStack(alignment: .leading, spacing: 8) {
+            Text("Source")
+                .font(.headline)
+            Picker("Source", selection: $settings.therapySource) {
+                ForEach(TherapySource.allCases) { source in
+                    Text(source.displayName).tag(source)
+                }
+            }
+            .pickerStyle(.segmented)
+            if player.isNoiseMode {
+                Text("Continuous stereo white noise, notch-filtered at your tinnitus frequency.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-            }
-            if player.isLoading {
-                ProgressView("Scanning folder…")
             }
             if let errorMessage = player.errorMessage {
                 Text(errorMessage)
@@ -85,16 +95,51 @@ struct TherapyPlayerView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    private var folderSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if let folderName = player.folderName {
+                Label(folderName, systemImage: "folder.fill")
+                    .font(.headline)
+            } else {
+                Text("Choose a folder of your own music files. DRM-protected tracks are skipped; everything else is notch-filtered in real time.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            if player.isLoading {
+                ProgressView("Scanning folder…")
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     private var nowPlayingCard: some View {
         VStack(spacing: 14) {
             artwork
-            if let track = player.nowPlaying {
+            if player.isNoiseMode {
+                Text("White Noise")
+                    .font(.title3.weight(.semibold))
+                    .multilineTextAlignment(.center)
+                Text("Notched around \(FrequencyFormat.hertz(settings.tinnitusFrequency))")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                Text(player.isPlaying ? timeString(player.currentTime) : "Ready")
+                    .font(.caption.monospacedDigit())
+                    .foregroundStyle(.secondary)
+            } else if let track = player.nowPlaying {
                 Text(track.title)
                     .font(.title3.weight(.semibold))
                     .multilineTextAlignment(.center)
                 Text(track.artist)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                ProgressView(value: progress)
+                HStack {
+                    Text(timeString(player.currentTime))
+                    Spacer()
+                    Text(timeString(player.duration))
+                }
+                .font(.caption.monospacedDigit())
+                .foregroundStyle(.secondary)
             } else {
                 Text("Nothing playing")
                     .font(.title3.weight(.semibold))
@@ -103,15 +148,6 @@ struct TherapyPlayerView: View {
                     .font(.subheadline)
                     .foregroundStyle(.tertiary)
             }
-
-            ProgressView(value: progress)
-            HStack {
-                Text(timeString(player.currentTime))
-                Spacer()
-                Text(timeString(player.duration))
-            }
-            .font(.caption.monospacedDigit())
-            .foregroundStyle(.secondary)
         }
         .padding(20)
         .frame(maxWidth: .infinity)
@@ -131,7 +167,7 @@ struct TherapyPlayerView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(Color.accentColor.opacity(0.15))
-                Image(systemName: "music.note")
+                Image(systemName: player.isNoiseMode ? "waveform" : "music.note")
                     .font(.system(size: 48))
                     .foregroundStyle(Color.accentColor)
             }
@@ -141,13 +177,15 @@ struct TherapyPlayerView: View {
 
     private var transport: some View {
         HStack(spacing: 28) {
-            Button {
-                player.previous()
-            } label: {
-                Image(systemName: "backward.fill")
-                    .font(.title2)
+            if !player.isNoiseMode {
+                Button {
+                    player.previous()
+                } label: {
+                    Image(systemName: "backward.fill")
+                        .font(.title2)
+                }
+                .disabled(player.tracks.isEmpty)
             }
-            .disabled(player.tracks.isEmpty)
 
             Button {
                 player.togglePlayPause()
@@ -155,15 +193,17 @@ struct TherapyPlayerView: View {
                 Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                     .font(.system(size: 64))
             }
-            .disabled(player.tracks.isEmpty)
+            .disabled(!player.isNoiseMode && player.tracks.isEmpty)
 
-            Button {
-                player.next()
-            } label: {
-                Image(systemName: "forward.fill")
-                    .font(.title2)
+            if !player.isNoiseMode {
+                Button {
+                    player.next()
+                } label: {
+                    Image(systemName: "forward.fill")
+                        .font(.title2)
+                }
+                .disabled(player.tracks.isEmpty)
             }
-            .disabled(player.tracks.isEmpty)
         }
         .buttonStyle(.plain)
     }
@@ -188,7 +228,7 @@ struct TherapyPlayerView: View {
     private var volumeSection: some View {
         @Bindable var settings = settings
         return VStack(alignment: .leading, spacing: 8) {
-            Text("Music volume")
+            Text("Volume")
                 .font(.headline)
             Slider(value: $settings.musicVolume, in: 0...1)
         }
