@@ -17,6 +17,7 @@ struct ListeningUsageView: View {
             }
             .padding(24)
             .navigationTitle("Listening")
+            .helpSheet()
         }
     }
 

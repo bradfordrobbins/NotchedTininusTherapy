@@ -30,6 +30,7 @@ struct FindFrequencyView: View {
                 .padding(24)
             }
             .navigationTitle("Find Frequency")
+            .helpSheet()
             .onAppear {
                 workingFrequency = settings.tinnitusFrequency
                 sineEngine.setFrequency(workingFrequency)

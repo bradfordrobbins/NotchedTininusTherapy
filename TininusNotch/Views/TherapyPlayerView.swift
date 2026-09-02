@@ -31,6 +31,7 @@ struct TherapyPlayerView: View {
                 .padding(24)
             }
             .navigationTitle("Therapy")
+            .helpSheet()
             .toolbar {
                 if !player.isNoiseMode {
                     ToolbarItem(placement: .primaryAction) {
