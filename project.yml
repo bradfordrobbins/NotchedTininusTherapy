@@ -1,0 +1,114 @@
+name: TininusNotch
+options:
+  bundleIdPrefix: com.tininusnotch
+  deploymentTarget:
+    iOS: "26.0"
+    macOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    GENERATE_INFOPLIST_FILE: YES
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 1.0.0
+    SWIFT_STRICT_CONCURRENCY: complete
+
+targetTemplates:
+  App:
+    type: application
+    sources:
+      - path: TininusNotch
+        excludes:
+          - "*.plist"
+          - "*.entitlements"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tininusnotch.app
+        PRODUCT_NAME: TininusNotch
+        INFOPLIST_KEY_CFBundleDisplayName: Tininus Notch
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.medical
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+
+targets:
+  TininusNotch-iOS:
+    templates:
+      - App
+    platform: iOS
+    info:
+      path: TininusNotch/Info-iOS.plist
+      properties:
+        UILaunchScreen: {}
+        UIBackgroundModes:
+          - audio
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: YES
+        INFOPLIST_FILE: TininusNotch/Info-iOS.plist
+
+  TininusNotch-macOS:
+    templates:
+      - App
+    platform: macOS
+    entitlements:
+      path: TininusNotch/TininusNotch.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.device.audio-input: true
+        com.apple.security.files.user-selected.read-only: true
+        com.apple.security.files.bookmarks.app-scope: true
+    info:
+      path: TininusNotch/Info-macOS.plist
+      properties:
+        LSMinimumSystemVersion: "26.0"
+        NSHumanReadableCopyright: Copyright © 2026
+        NSMicrophoneUsageDescription: Tininus Notch uses the system audio engine for playback. It does not record from the microphone.
+    settings:
+      base:
+        INFOPLIST_FILE: TininusNotch/Info-macOS.plist
+        CODE_SIGN_ENTITLEMENTS: TininusNotch/TininusNotch.entitlements
+        COMBINE_HIDPI_IMAGES: YES
+
+  TininusNotchTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - TininusNotchTests
+    dependencies:
+      - target: TininusNotch-macOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tininusnotch.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/TininusNotch.app/Contents/MacOS/TininusNotch"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  TininusNotch-iOS:
+    build:
+      targets:
+        TininusNotch-iOS: all
+    run:
+      config: Debug
+  TininusNotch-macOS:
+    build:
+      targets:
+        TininusNotch-macOS: all
+    test:
+      targets:
+        - TininusNotchTests
+      config: Debug
+    run:
+      config: Debug

@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05FD6ECEA379E39A57FCA784 /* NotchWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE04982E254AA7A802AEC9E /* NotchWidth.swift */; };
+		11A81211C693D11947DB2359 /* OutputAudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF04C1C6217409B4AE81D7E /* OutputAudioSession.swift */; };
+		15DA384185DAF1986C421CBB /* FolderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7335FCF886CB11F7F17894 /* FolderLibrary.swift */; };
+		16D0734CE922EDF02807CDC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C4C1060E3E938B971284F7 /* Assets.xcassets */; };
+		1D18213FC899FF4C66141C91 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */; };
+		20C188E977CC485E4FEE097F /* SpectrumAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D42580608A4E5A76523147 /* SpectrumAnalyzer.swift */; };
+		214632E3EA2BE6ED4B24C3CA /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD15305826B562C20AB629C /* SpectrumView.swift */; };
+		25D70E0165D023E32627AEA4 /* NotchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF83DDD445A6AFAC49B62CC /* NotchFilter.swift */; };
+		2692A40CAED1F5F24D33AE53 /* TherapyAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */; };
+		2EE560C3FB00AABA339C9CDD /* ListeningUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C360A0278866AE273E7AD5 /* ListeningUsageView.swift */; };
+		2F29061F554A731B8903DB46 /* TherapyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0C396EEA78F45AF429DA3 /* TherapyPlayer.swift */; };
+		3E09FB7AB0F4A034456E3291 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428E5C9DE013751B81CDBA3 /* ContentView.swift */; };
+		42EC7469F77D200DF3F2ED36 /* FolderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7335FCF886CB11F7F17894 /* FolderLibrary.swift */; };
+		4DAE6A4F06EDA58EC1CDB4EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C4C1060E3E938B971284F7 /* Assets.xcassets */; };
+		5C404ACA68414D13606EB6F4 /* OutputAudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF04C1C6217409B4AE81D7E /* OutputAudioSession.swift */; };
+		6D5323EFA2B081963E335F34 /* NotchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E85AEEA6E567FCB011DCC8 /* NotchFilterTests.swift */; };
+		6FFFFAA6AC9CF9DD87F0D677 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD15305826B562C20AB629C /* SpectrumView.swift */; };
+		735FECB294F483C85B9139D6 /* ListeningUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C360A0278866AE273E7AD5 /* ListeningUsageView.swift */; };
+		75332C167F9048B39507EAA1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */; };
+		779C19DB4B3327836AEA9C60 /* TininusNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */; };
+		8BA86D935F2B22DC77EA1527 /* SineToneEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BFBC7F16D4CB79D810FF57 /* SineToneEngine.swift */; };
+		8C21CF401CEC2D2E0A5B2836 /* ListeningLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160993BE001BA59350F0852 /* ListeningLog.swift */; };
+		8D79D56684D9CA9130828DF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428E5C9DE013751B81CDBA3 /* ContentView.swift */; };
+		8F7996C70CEFF8A5C6E72FEB /* FindFrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */; };
+		9EDECE9C243C8A10CB1CA06F /* NotchWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE04982E254AA7A802AEC9E /* NotchWidth.swift */; };
+		A429553B47747A1F2435AC48 /* ListeningLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160993BE001BA59350F0852 /* ListeningLog.swift */; };
+		A719B5130FF8FA00CF6E0E3C /* SineToneEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BFBC7F16D4CB79D810FF57 /* SineToneEngine.swift */; };
+		A96E7545398A6A95783D2576 /* FindFrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */; };
+		AA01C59C378045D93C09A56D /* TherapyAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */; };
+		AB37FE7F3754BF2EF370DC5F /* SpectrumAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D42580608A4E5A76523147 /* SpectrumAnalyzer.swift */; };
+		B22BBDC68D6F2E6B4A0796B5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1611E350FB7B1A584FAFBCB /* Track.swift */; };
+		B8C07CCF38B8C900C07816D0 /* TherapyPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */; };
+		CC09958E2D3F4FBBF364ACE0 /* TininusNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */; };
+		E5D24982A4961D900A7D85AD /* NotchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF83DDD445A6AFAC49B62CC /* NotchFilter.swift */; };
+		EDF751EB61A0A5058AB5ACD9 /* TherapyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB0C396EEA78F45AF429DA3 /* TherapyPlayer.swift */; };
+		F296792A914C4793C571F3A1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1611E350FB7B1A584FAFBCB /* Track.swift */; };
+		F2ED4D7A57B1455E1E76D592 /* TherapyPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF4889F7FA86A9728A482140 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 100E29A8CA4CC3BE673A5596 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CD3B3FB8D6AEA2F124F7CB4;
+			remoteInfo = "TininusNotch-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04C4C1060E3E938B971284F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFrequencyView.swift; sourceTree = "<group>"; };
+		3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyAudioEngine.swift; sourceTree = "<group>"; };
+		3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyPlayerView.swift; sourceTree = "<group>"; };
+		4160993BE001BA59350F0852 /* ListeningLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningLog.swift; sourceTree = "<group>"; };
+		4428E5C9DE013751B81CDBA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		46E8D7721CD7D52FCCD47AFF /* TininusNotch-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TininusNotch-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58BFBC7F16D4CB79D810FF57 /* SineToneEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SineToneEngine.swift; sourceTree = "<group>"; };
+		5DB0C396EEA78F45AF429DA3 /* TherapyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyPlayer.swift; sourceTree = "<group>"; };
+		5FD15305826B562C20AB629C /* SpectrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
+		64D42580608A4E5A76523147 /* SpectrumAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumAnalyzer.swift; sourceTree = "<group>"; };
+		6748569BF03DFC5F571CDD22 /* TininusNotchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TininusNotchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68E85AEEA6E567FCB011DCC8 /* NotchFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchFilterTests.swift; sourceTree = "<group>"; };
+		6C7335FCF886CB11F7F17894 /* FolderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderLibrary.swift; sourceTree = "<group>"; };
+		6FE04982E254AA7A802AEC9E /* NotchWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchWidth.swift; sourceTree = "<group>"; };
+		9DF83DDD445A6AFAC49B62CC /* NotchFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchFilter.swift; sourceTree = "<group>"; };
+		AAF04C1C6217409B4AE81D7E /* OutputAudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputAudioSession.swift; sourceTree = "<group>"; };
+		C1C360A0278866AE273E7AD5 /* ListeningUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningUsageView.swift; sourceTree = "<group>"; };
+		C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		E1611E350FB7B1A584FAFBCB /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TininusNotchApp.swift; sourceTree = "<group>"; };
+		F4AAF48BCBF908225E054F1D /* TininusNotch-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "TininusNotch-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		63822CBBA910AA808330BE33 /* TininusNotch */ = {
+			isa = PBXGroup;
+			children = (
+				04C4C1060E3E938B971284F7 /* Assets.xcassets */,
+				4428E5C9DE013751B81CDBA3 /* ContentView.swift */,
+				F2CE0C03A431D093A08DEE6B /* TininusNotchApp.swift */,
+				A8CFF4D9DE0C03965EFFAECC /* Audio */,
+				BF51FD9D4CB972F7A656A847 /* Models */,
+				F49F35D89EF9345E3E6C1ADD /* Views */,
+			);
+			path = TininusNotch;
+			sourceTree = "<group>";
+		};
+		A8CFF4D9DE0C03965EFFAECC /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				6C7335FCF886CB11F7F17894 /* FolderLibrary.swift */,
+				9DF83DDD445A6AFAC49B62CC /* NotchFilter.swift */,
+				AAF04C1C6217409B4AE81D7E /* OutputAudioSession.swift */,
+				58BFBC7F16D4CB79D810FF57 /* SineToneEngine.swift */,
+				64D42580608A4E5A76523147 /* SpectrumAnalyzer.swift */,
+				3A1AA4390075B73D0F0A5690 /* TherapyAudioEngine.swift */,
+				5DB0C396EEA78F45AF429DA3 /* TherapyPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		BF51FD9D4CB972F7A656A847 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C582BC9EF0FEFA52D3E6B595 /* AppSettings.swift */,
+				4160993BE001BA59350F0852 /* ListeningLog.swift */,
+				6FE04982E254AA7A802AEC9E /* NotchWidth.swift */,
+				E1611E350FB7B1A584FAFBCB /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE98197045E6044B82772FD5 /* TininusNotchTests */ = {
+			isa = PBXGroup;
+			children = (
+				68E85AEEA6E567FCB011DCC8 /* NotchFilterTests.swift */,
+			);
+			path = TininusNotchTests;
+			sourceTree = "<group>";
+		};
+		E0FED742DEE095737030EFF8 = {
+			isa = PBXGroup;
+			children = (
+				63822CBBA910AA808330BE33 /* TininusNotch */,
+				CE98197045E6044B82772FD5 /* TininusNotchTests */,
+				E6EE3B5777FE90F17C8AFB7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6EE3B5777FE90F17C8AFB7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4AAF48BCBF908225E054F1D /* TininusNotch-iOS.app */,
+				46E8D7721CD7D52FCCD47AFF /* TininusNotch-macOS.app */,
+				6748569BF03DFC5F571CDD22 /* TininusNotchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F49F35D89EF9345E3E6C1ADD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0584E62D573BE489BEA67C9F /* FindFrequencyView.swift */,
+				C1C360A0278866AE273E7AD5 /* ListeningUsageView.swift */,
+				5FD15305826B562C20AB629C /* SpectrumView.swift */,
+				3F82769CDE2F353EEAC500F7 /* TherapyPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3CD3B3FB8D6AEA2F124F7CB4 /* TininusNotch-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 646FEE9C40FBA5325F0D7C99 /* Build configuration list for PBXNativeTarget "TininusNotch-macOS" */;
+			buildPhases = (
+				AB4EA3D023CF092A1A900C47 /* Sources */,
+				14186D55F6964378315B2ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TininusNotch-macOS";
+			packageProductDependencies = (
+			);
+			productName = "TininusNotch-macOS";
+			productReference = 46E8D7721CD7D52FCCD47AFF /* TininusNotch-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D6244B9E7A43E8EA9FE6BC6 /* TininusNotchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79FE2FF01B01A0027D5DF28 /* Build configuration list for PBXNativeTarget "TininusNotchTests" */;
+			buildPhases = (
+				AF92CF7B7894CC82B1EDEADD /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04AC46B32D9EE6909C6523B6 /* PBXTargetDependency */,
+			);
+			name = TininusNotchTests;
+			packageProductDependencies = (
+			);
+			productName = TininusNotchTests;
+			productReference = 6748569BF03DFC5F571CDD22 /* TininusNotchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEC5B5C341CE8C1455D45524 /* TininusNotch-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003BD6E4D51601FB853D2D23 /* Build configuration list for PBXNativeTarget "TininusNotch-iOS" */;
+			buildPhases = (
+				2BBD945F906E4AFE975F9C31 /* Sources */,
+				E64E644CF465D84EABA20866 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TininusNotch-iOS";
+			packageProductDependencies = (
+			);
+			productName = "TininusNotch-iOS";
+			productReference = F4AAF48BCBF908225E054F1D /* TininusNotch-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100E29A8CA4CC3BE673A5596 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 6F4A65BFCCD829405FBD4666 /* Build configuration list for PBXProject "TininusNotch" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E0FED742DEE095737030EFF8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E6EE3B5777FE90F17C8AFB7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEC5B5C341CE8C1455D45524 /* TininusNotch-iOS */,
+				3CD3B3FB8D6AEA2F124F7CB4 /* TininusNotch-macOS */,
+				5D6244B9E7A43E8EA9FE6BC6 /* TininusNotchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14186D55F6964378315B2ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D0734CE922EDF02807CDC9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64E644CF465D84EABA20866 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DAE6A4F06EDA58EC1CDB4EF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BBD945F906E4AFE975F9C31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D18213FC899FF4C66141C91 /* AppSettings.swift in Sources */,
+				8D79D56684D9CA9130828DF2 /* ContentView.swift in Sources */,
+				A96E7545398A6A95783D2576 /* FindFrequencyView.swift in Sources */,
+				42EC7469F77D200DF3F2ED36 /* FolderLibrary.swift in Sources */,
+				8C21CF401CEC2D2E0A5B2836 /* ListeningLog.swift in Sources */,
+				735FECB294F483C85B9139D6 /* ListeningUsageView.swift in Sources */,
+				E5D24982A4961D900A7D85AD /* NotchFilter.swift in Sources */,
+				05FD6ECEA379E39A57FCA784 /* NotchWidth.swift in Sources */,
+				5C404ACA68414D13606EB6F4 /* OutputAudioSession.swift in Sources */,
+				A719B5130FF8FA00CF6E0E3C /* SineToneEngine.swift in Sources */,
+				20C188E977CC485E4FEE097F /* SpectrumAnalyzer.swift in Sources */,
+				6FFFFAA6AC9CF9DD87F0D677 /* SpectrumView.swift in Sources */,
+				AA01C59C378045D93C09A56D /* TherapyAudioEngine.swift in Sources */,
+				EDF751EB61A0A5058AB5ACD9 /* TherapyPlayer.swift in Sources */,
+				F2ED4D7A57B1455E1E76D592 /* TherapyPlayerView.swift in Sources */,
+				779C19DB4B3327836AEA9C60 /* TininusNotchApp.swift in Sources */,
+				B22BBDC68D6F2E6B4A0796B5 /* Track.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB4EA3D023CF092A1A900C47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75332C167F9048B39507EAA1 /* AppSettings.swift in Sources */,
+				3E09FB7AB0F4A034456E3291 /* ContentView.swift in Sources */,
+				8F7996C70CEFF8A5C6E72FEB /* FindFrequencyView.swift in Sources */,
+				15DA384185DAF1986C421CBB /* FolderLibrary.swift in Sources */,
+				A429553B47747A1F2435AC48 /* ListeningLog.swift in Sources */,
+				2EE560C3FB00AABA339C9CDD /* ListeningUsageView.swift in Sources */,
+				25D70E0165D023E32627AEA4 /* NotchFilter.swift in Sources */,
+				9EDECE9C243C8A10CB1CA06F /* NotchWidth.swift in Sources */,
+				11A81211C693D11947DB2359 /* OutputAudioSession.swift in Sources */,
+				8BA86D935F2B22DC77EA1527 /* SineToneEngine.swift in Sources */,
+				AB37FE7F3754BF2EF370DC5F /* SpectrumAnalyzer.swift in Sources */,
+				214632E3EA2BE6ED4B24C3CA /* SpectrumView.swift in Sources */,
+				2692A40CAED1F5F24D33AE53 /* TherapyAudioEngine.swift in Sources */,
+				2F29061F554A731B8903DB46 /* TherapyPlayer.swift in Sources */,
+				B8C07CCF38B8C900C07816D0 /* TherapyPlayerView.swift in Sources */,
+				CC09958E2D3F4FBBF364ACE0 /* TininusNotchApp.swift in Sources */,
+				F296792A914C4793C571F3A1 /* Track.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF92CF7B7894CC82B1EDEADD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5323EFA2B081963E335F34 /* NotchFilterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04AC46B32D9EE6909C6523B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CD3B3FB8D6AEA2F124F7CB4 /* TininusNotch-macOS */;
+			targetProxy = AF4889F7FA86A9728A482140 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2AB6A34F1D0CF2DB201F7748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TininusNotch/TininusNotch.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TininusNotch/Info-macOS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tininusnotch.app;
+				PRODUCT_NAME = TininusNotch;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		359AB703A27D175133C63E15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TininusNotch/TininusNotch.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TininusNotch/Info-macOS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tininusnotch.app;
+				PRODUCT_NAME = TininusNotch;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		54906B8D24A1804CAAA26873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		690494246754621BD7F733D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tininusnotch.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TininusNotch.app/Contents/MacOS/TininusNotch";
+			};
+			name = Debug;
+		};
+		9F938529672126BD63DC3FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "TininusNotch/Info-iOS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tininusnotch.app;
+				PRODUCT_NAME = TininusNotch;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7FECB6545D0165E24AD0834 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "TininusNotch/Info-iOS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tininus Notch";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tininusnotch.app;
+				PRODUCT_NAME = TininusNotch;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA607EF697E9EA942D5620A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tininusnotch.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TininusNotch.app/Contents/MacOS/TininusNotch";
+			};
+			name = Release;
+		};
+		CC5A333573FE4C70079BB21A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		003BD6E4D51601FB853D2D23 /* Build configuration list for PBXNativeTarget "TininusNotch-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F938529672126BD63DC3FE7 /* Debug */,
+				B7FECB6545D0165E24AD0834 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		646FEE9C40FBA5325F0D7C99 /* Build configuration list for PBXNativeTarget "TininusNotch-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB6A34F1D0CF2DB201F7748 /* Debug */,
+				359AB703A27D175133C63E15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6F4A65BFCCD829405FBD4666 /* Build configuration list for PBXProject "TininusNotch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC5A333573FE4C70079BB21A /* Debug */,
+				54906B8D24A1804CAAA26873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D79FE2FF01B01A0027D5DF28 /* Build configuration list for PBXNativeTarget "TininusNotchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				690494246754621BD7F733D3 /* Debug */,
+				CA607EF697E9EA942D5620A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100E29A8CA4CC3BE673A5596 /* Project object */;
+}
