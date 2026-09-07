@@ -87,9 +87,13 @@ struct ListeningUsageView: View {
             Text("This month \(log.minutesInMonth(containing: visibleMonth)) min")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Text("Minutes of notched therapy music. Totals are saved on this device.")
+            Text("Minutes of notched therapy while audio is actually playing. Totals are saved on this device.")
                 .font(.footnote)
                 .foregroundStyle(.tertiary)
+            Button("Reset calendar") {
+                log.resetAll()
+            }
+            .font(.footnote)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

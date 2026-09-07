@@ -19,6 +19,8 @@ final class TherapyPlayer {
     private let settings: AppSettings
     private let listeningLog: ListeningLog
     private var lastListenTick: Date?
+    private var lastEngineTime: TimeInterval = 0
+    private var progressGeneration = 0
 
     init(settings: AppSettings, listeningLog: ListeningLog) {
         self.settings = settings
@@ -103,6 +105,7 @@ final class TherapyPlayer {
             isPlaying = true
             currentTime = 0
             lastListenTick = .now
+            lastEngineTime = 0
             errorMessage = nil
             startProgressUpdates()
         } catch {
@@ -122,6 +125,7 @@ final class TherapyPlayer {
             isPlaying = true
             currentTime = 0
             lastListenTick = .now
+            lastEngineTime = 0
             errorMessage = nil
             startProgressUpdates()
         } catch {
@@ -170,6 +174,7 @@ final class TherapyPlayer {
 
     func resume() {
         lastListenTick = .now
+        lastEngineTime = engine.currentTime()
         engine.resume()
         isPlaying = true
         startProgressUpdates()
@@ -235,24 +240,51 @@ final class TherapyPlayer {
     }
 
     private func startProgressUpdates() {
+        progressGeneration += 1
+        let generation = progressGeneration
         progressTask?.cancel()
         progressTask = Task { [weak self] in
             while !Task.isCancelled {
-                guard let self else { return }
+                guard let self, generation == self.progressGeneration else { return }
                 if self.isPlaying {
                     self.recordListening(until: .now)
                     self.currentTime = self.engine.currentTime()
                 } else {
                     self.lastListenTick = nil
                 }
-                try? await Task.sleep(for: .milliseconds(250))
+                do {
+                    try await Task.sleep(for: .milliseconds(250))
+                } catch {
+                    return
+                }
             }
         }
     }
 
     private func recordListening(until now: Date) {
-        guard isPlaying, let lastListenTick else {
-            self.lastListenTick = isPlaying ? now : nil
+        guard isPlaying else {
+            lastListenTick = nil
+            return
+        }
+
+        let engineTime = engine.currentTime()
+        let playheadMoved: Bool
+        if engineTime == 0, lastEngineTime == 0 {
+            playheadMoved = engine.isOutputting
+        } else {
+            playheadMoved = engineTime > lastEngineTime + 0.02 || engineTime < lastEngineTime - 0.25
+        }
+        lastEngineTime = engineTime
+
+        // Count only while audio is actually advancing. A stalled "playing"
+        // session used to keep adding wall-clock time to the calendar.
+        guard engine.isOutputting, playheadMoved else {
+            lastListenTick = now
+            return
+        }
+
+        guard let lastListenTick else {
+            self.lastListenTick = now
             return
         }
         listeningLog.add(seconds: now.timeIntervalSince(lastListenTick), on: now)

@@ -33,6 +33,10 @@ final class TherapyAudioEngine {
 
     var isRunning: Bool { engine?.isRunning ?? false }
 
+    var isOutputting: Bool {
+        isPlaying && !isStopped && (engine?.isRunning ?? false) && player.isPlaying
+    }
+
     func prepare() throws {
         try OutputAudioSession.activate()
         let engine = makeEngineIfNeeded()

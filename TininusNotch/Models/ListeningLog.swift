@@ -34,6 +34,12 @@ final class ListeningLog {
         persist()
     }
 
+    func resetAll() {
+        secondsByDay = [:]
+        unsavedSeconds = 0
+        persist()
+    }
+
     func minutes(on date: Date) -> Int {
         let seconds = secondsByDay[Self.dayKey(date)] ?? 0
         return min(999, Int(seconds / 60.0))
